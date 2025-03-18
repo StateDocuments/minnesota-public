@@ -1,0 +1,11 @@
+// manifest.json (generated during build)
+{
+  "components": [
+    {
+      "name": "ImageGallery",
+      "path": "./components/ImageGallery",
+      "thumbnail": "./thumbnails/image-gallery.png", 
+      "description": "An image gallery component"
+    }
+  ]
+}
