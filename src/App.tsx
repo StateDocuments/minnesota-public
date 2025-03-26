@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import './styles.css';
 
-const App = () => {
-    const [images, setImages] = useState([]);
+const App: React.FC = () => {
+    const [images, setImages] = useState<string[]>([]);
 
-    const handleImageUpload = (event) => {
-        const file = event.target.files[0];
+    const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = (e) => {
-                setImages([...images, e.target.result]);
+                const result = e.target?.result as string;
+                setImages([...images, result]);
             };
             reader.readAsDataURL(file);
         }
